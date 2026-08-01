@@ -27,7 +27,7 @@ type CartContextValue = {
   limpar: () => void;
   subtotal: number;
   totalItens: number;
-  pontos: number;
+  
 };
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -96,7 +96,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       limpar,
       subtotal,
       totalItens,
-      pontos: Math.floor(subtotal),
+      
     }),
     [itens, adicionar, remover, atualizar, limpar, subtotal, totalItens],
   );

@@ -11,10 +11,10 @@ export const Route = createFileRoute("/entrar")({
       { title: "Entrar ou criar conta — Bistrô Alho" },
       {
         name: "description",
-        content: "Acesse sua conta do Clube Alho para acompanhar pedidos e acumular pontos.",
+        content: "Acesse sua conta para acompanhar pedidos e repetir seus pratos favoritos.",
       },
       { property: "og:title", content: "Entrar ou criar conta — Bistrô Alho" },
-      { property: "og:description", content: "Clube Alho: pedidos, pontos e recompra em 1 clique." },
+      { property: "og:description", content: "Acompanhe pedidos e recompre em 1 clique." },
     ],
   }),
   component: Entrar,
@@ -29,7 +29,7 @@ function Entrar() {
         {modo === "login" ? "Entrar na conta" : "Criar conta"}
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Clube Alho: acompanhe pedidos, acumule pontos e recompre em 1 clique.
+        Acompanhe seus pedidos e recompre em 1 clique.
       </p>
 
       <form
