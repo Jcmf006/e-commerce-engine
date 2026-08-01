@@ -32,7 +32,7 @@ const statusCor: Record<string, string> = {
 function Admin() {
   const [pratos, setPratos] = useState<Prato[]>(PRATOS);
   const [editando, setEditando] = useState<Prato | null>(null);
-  const [form, setForm] = useState({ nome: "", preco: "", categoria: CATEGORIAS[0], estoque: "" });
+  const [form, setForm] = useState({ nome: "", preco: "", categoria: CATEGORIAS[0]!, estoque: "" });
 
   const faturamento = VENDAS_SEMANA.reduce((s, d) => s + d.total, 0);
   const maxVenda = Math.max(...VENDAS_SEMANA.map((d) => d.total));
@@ -73,7 +73,7 @@ function Admin() {
       toast.success("Prato criado");
     }
     setEditando(null);
-    setForm({ nome: "", preco: "", categoria: CATEGORIAS[0], estoque: "" });
+    setForm({ nome: "", preco: "", categoria: CATEGORIAS[0]!, estoque: "" });
   }
 
   return (
@@ -221,7 +221,7 @@ function Admin() {
                   variant="ghost"
                   onClick={() => {
                     setEditando(null);
-                    setForm({ nome: "", preco: "", categoria: CATEGORIAS[0], estoque: "" });
+                    setForm({ nome: "", preco: "", categoria: CATEGORIAS[0]!, estoque: "" });
                   }}
                 >
                   Cancelar
