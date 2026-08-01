@@ -34,7 +34,7 @@ export const Route = createFileRoute("/prato/$slug")({
 });
 
 function PratoPage() {
-  const { prato } = Route.useLoaderData();
+  const { prato } = Route.useLoaderData() as { prato: Prato };
   const { adicionar } = useCart();
   const [quantidade, setQuantidade] = useState(1);
   const [escolhas, setEscolhas] = useState<Record<string, string>>(() =>
