@@ -115,7 +115,7 @@ function Cardapio() {
               max={150}
               step={5}
               value={[precoMax]}
-              onValueChange={([v]) => setPrecoMax(v)}
+              onValueChange={(v) => setPrecoMax(v[0] ?? 150)}
             />
           </div>
 
