@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Search } from "lucide-react";
+import { Search, SlidersHorizontal } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { Button } from "@/components/ui/button";
@@ -36,6 +36,7 @@ function Cardapio() {
   const [precoMax, setPrecoMax] = useState(150);
   const [notaMin, setNotaMin] = useState(0);
   const [soDisponiveis, setSoDisponiveis] = useState(false);
+  const [filtrosAbertos, setFiltrosAbertos] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setBuscaDebounced(busca.trim().toLowerCase()), 300);
@@ -179,7 +180,7 @@ function Cardapio() {
               Nenhum prato encontrado com esses filtros.
             </p>
           ) : (
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:gap-5 xl:grid-cols-3">
               {resultados.map((p) => (
                 <ProductCard key={p.id} prato={p} />
               ))}
