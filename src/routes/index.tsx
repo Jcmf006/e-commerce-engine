@@ -101,14 +101,19 @@ function Home() {
       </section>
 
       <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-        <div className="gradiente-brasa sombra-brasa flex flex-wrap items-center justify-between gap-6 rounded-2xl p-8 sm:p-12">
+        <div className="gradiente-brasa sombra-brasa flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border/60 p-8 sm:p-12">
           <div className="min-w-0">
             <h2 className="font-display text-3xl text-primary-foreground">Peça agora</h2>
             <p className="mt-2 max-w-md text-sm text-primary-foreground/90">
               Delivery rápido ou retirada na loja: seu prato favorito sai quentinho da nossa cozinha.
             </p>
           </div>
-          <Button asChild size="lg" variant="secondary">
+          <Button
+            asChild
+            size="lg"
+            variant="secondary"
+            className="bg-foreground font-semibold text-background shadow-lg ring-1 ring-foreground/30 hover:bg-foreground/90"
+          >
             <Link to="/cardapio">Ver cardápio</Link>
           </Button>
         </div>
