@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, ShoppingBag, User, X } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import logo from "@/assets/alho-bistro-logo.jpg.asset.json";
 
 const links = [
   { to: "/", label: "Início" },
@@ -19,11 +20,15 @@ export function Header() {
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-4 sm:px-6">
         <div className="flex min-w-0 items-center gap-8">
           <Link to="/" className="flex min-w-0 items-center gap-2">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full gradiente-brasa font-display text-sm font-bold text-primary-foreground">
-              BA
-            </span>
+            <img
+              src={logo.url}
+              alt="Alho Bistrô"
+              width={40}
+              height={40}
+              className="h-10 w-10 shrink-0 rounded-full object-cover"
+            />
             <span className="truncate font-display text-lg font-semibold tracking-tight">
-              Bistrô Alho
+              Alho Bistrô
             </span>
           </Link>
           <nav aria-label="Principal" className="hidden items-center gap-6 md:flex">
