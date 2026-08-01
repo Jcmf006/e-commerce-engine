@@ -14,7 +14,6 @@ Loja online (restaurante) construída com TanStack Start, React 19, Tailwind CSS
 | `/pedido/$codigo` | Confirmação com número do pedido |
 | `/entrar` | Login/cadastro (UI; autenticação real ao ligar o backend) |
 | `/lojas` | Unidades e horários para retirada |
-| `/admin` | Painel: CRUD de pratos, pedidos, relatórios e alertas de estoque |
 
 ## Estrutura
 
