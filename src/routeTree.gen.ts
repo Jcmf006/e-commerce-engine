@@ -12,6 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CardapioRouteImport } from './routes/cardapio'
 import { Route as CarrinhoRouteImport } from './routes/carrinho'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as EntrarRouteImport } from './routes/entrar'
+import { Route as LojasRouteImport } from './routes/lojas'
+import { Route as PedidoCodigoRouteImport } from './routes/pedido.$codigo'
 import { Route as PratoSlugRouteImport } from './routes/prato.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +33,26 @@ const CarrinhoRoute = CarrinhoRouteImport.update({
   path: '/carrinho',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LojasRoute = LojasRouteImport.update({
+  id: '/lojas',
+  path: '/lojas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PedidoCodigoRoute = PedidoCodigoRouteImport.update({
+  id: '/pedido/$codigo',
+  path: '/pedido/$codigo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PratoSlugRoute = PratoSlugRouteImport.update({
   id: '/prato/$slug',
   path: '/prato/$slug',
@@ -39,12 +63,20 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cardapio': typeof CardapioRoute
   '/carrinho': typeof CarrinhoRoute
+  '/checkout': typeof CheckoutRoute
+  '/entrar': typeof EntrarRoute
+  '/lojas': typeof LojasRoute
+  '/pedido/$codigo': typeof PedidoCodigoRoute
   '/prato/$slug': typeof PratoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cardapio': typeof CardapioRoute
   '/carrinho': typeof CarrinhoRoute
+  '/checkout': typeof CheckoutRoute
+  '/entrar': typeof EntrarRoute
+  '/lojas': typeof LojasRoute
+  '/pedido/$codigo': typeof PedidoCodigoRoute
   '/prato/$slug': typeof PratoSlugRoute
 }
 export interface FileRoutesById {
@@ -52,20 +84,53 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/cardapio': typeof CardapioRoute
   '/carrinho': typeof CarrinhoRoute
+  '/checkout': typeof CheckoutRoute
+  '/entrar': typeof EntrarRoute
+  '/lojas': typeof LojasRoute
+  '/pedido/$codigo': typeof PedidoCodigoRoute
   '/prato/$slug': typeof PratoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cardapio' | '/carrinho' | '/prato/$slug'
+  fullPaths:
+    | '/'
+    | '/cardapio'
+    | '/carrinho'
+    | '/checkout'
+    | '/entrar'
+    | '/lojas'
+    | '/pedido/$codigo'
+    | '/prato/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cardapio' | '/carrinho' | '/prato/$slug'
-  id: '__root__' | '/' | '/cardapio' | '/carrinho' | '/prato/$slug'
+  to:
+    | '/'
+    | '/cardapio'
+    | '/carrinho'
+    | '/checkout'
+    | '/entrar'
+    | '/lojas'
+    | '/pedido/$codigo'
+    | '/prato/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/cardapio'
+    | '/carrinho'
+    | '/checkout'
+    | '/entrar'
+    | '/lojas'
+    | '/pedido/$codigo'
+    | '/prato/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CardapioRoute: typeof CardapioRoute
   CarrinhoRoute: typeof CarrinhoRoute
+  CheckoutRoute: typeof CheckoutRoute
+  EntrarRoute: typeof EntrarRoute
+  LojasRoute: typeof LojasRoute
+  PedidoCodigoRoute: typeof PedidoCodigoRoute
   PratoSlugRoute: typeof PratoSlugRoute
 }
 
@@ -92,6 +157,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CarrinhoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lojas': {
+      id: '/lojas'
+      path: '/lojas'
+      fullPath: '/lojas'
+      preLoaderRoute: typeof LojasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pedido/$codigo': {
+      id: '/pedido/$codigo'
+      path: '/pedido/$codigo'
+      fullPath: '/pedido/$codigo'
+      preLoaderRoute: typeof PedidoCodigoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/prato/$slug': {
       id: '/prato/$slug'
       path: '/prato/$slug'
@@ -106,6 +199,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CardapioRoute: CardapioRoute,
   CarrinhoRoute: CarrinhoRoute,
+  CheckoutRoute: CheckoutRoute,
+  EntrarRoute: EntrarRoute,
+  LojasRoute: LojasRoute,
+  PedidoCodigoRoute: PedidoCodigoRoute,
   PratoSlugRoute: PratoSlugRoute,
 }
 export const routeTree = rootRouteImport
