@@ -30,11 +30,6 @@ export function Footer() {
                 Nossas lojas
               </Link>
             </li>
-            <li>
-              <Link to="/admin" className="hover:text-foreground">
-                Painel administrativo
-              </Link>
-            </li>
           </ul>
         </div>
         <div>
