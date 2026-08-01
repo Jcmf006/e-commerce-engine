@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CardapioRouteImport } from './routes/cardapio'
+import { Route as CarrinhoRouteImport } from './routes/carrinho'
+import { Route as PratoSlugRouteImport } from './routes/prato.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +24,49 @@ const CardapioRoute = CardapioRouteImport.update({
   path: '/cardapio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CarrinhoRoute = CarrinhoRouteImport.update({
+  id: '/carrinho',
+  path: '/carrinho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PratoSlugRoute = PratoSlugRouteImport.update({
+  id: '/prato/$slug',
+  path: '/prato/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cardapio': typeof CardapioRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/prato/$slug': typeof PratoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cardapio': typeof CardapioRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/prato/$slug': typeof PratoSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cardapio': typeof CardapioRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/prato/$slug': typeof PratoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cardapio'
+  fullPaths: '/' | '/cardapio' | '/carrinho' | '/prato/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cardapio'
-  id: '__root__' | '/' | '/cardapio'
+  to: '/' | '/cardapio' | '/carrinho' | '/prato/$slug'
+  id: '__root__' | '/' | '/cardapio' | '/carrinho' | '/prato/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CardapioRoute: typeof CardapioRoute
+  CarrinhoRoute: typeof CarrinhoRoute
+  PratoSlugRoute: typeof PratoSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +85,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CardapioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/carrinho': {
+      id: '/carrinho'
+      path: '/carrinho'
+      fullPath: '/carrinho'
+      preLoaderRoute: typeof CarrinhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prato/$slug': {
+      id: '/prato/$slug'
+      path: '/prato/$slug'
+      fullPath: '/prato/$slug'
+      preLoaderRoute: typeof PratoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CardapioRoute: CardapioRoute,
+  CarrinhoRoute: CarrinhoRoute,
+  PratoSlugRoute: PratoSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

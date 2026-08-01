@@ -5,11 +5,11 @@ import { toast } from "sonner";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
-import { PRATOS, getPrato } from "@/data/menu";
+import { PRATOS, getPrato, type Prato } from "@/data/menu";
 import { brl } from "@/utils/format";
 
 export const Route = createFileRoute("/prato/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { prato: Prato } => {
     const prato = getPrato(params.slug);
     if (!prato) throw notFound();
     return { prato };
