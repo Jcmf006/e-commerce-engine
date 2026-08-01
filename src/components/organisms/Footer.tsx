@@ -38,7 +38,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="font-display text-sm uppercase tracking-widest text-accent">Unidades</h3>
+          <h3 className="font-display text-sm uppercase tracking-widest text-accent">Unidade</h3>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             {LOJAS.map((loja) => (
               <li key={loja.nome}>
