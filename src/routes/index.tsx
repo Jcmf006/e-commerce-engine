@@ -46,8 +46,10 @@ function Home() {
             A brasa começa aqui. O resto entregamos na sua mesa.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Cortes maturados, costela defumada por 8 horas e nossa lendária Cebola em Flor. Peça
-            online para entrega ou agende a retirada na loja mais próxima.
+            Frango à Parmegiana que conquista pelo crocante e pelo cremoso: filé empanado na hora,
+            frito na medida certa, coberto com molho de tomate artesanal e generosa camada de
+            mussarela gratinada. Acompanha arroz soltinho. Peça pelo delivery ou retire na loja.
+            Sabor que vira tradição!
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
