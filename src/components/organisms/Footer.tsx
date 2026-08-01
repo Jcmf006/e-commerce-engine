@@ -6,10 +6,11 @@ export function Footer() {
     <footer className="mt-24 border-t border-border/70 bg-surface">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
-          <h3 className="font-display text-xl">Bistrô Alho</h3>
+          <h3 className="font-display text-xl">Receitas que atravessam gerações</h3>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Carnes na brasa, alho confitado e hospitalidade de bairro. Peça online, retire na loja
-            ou receba em casa.
+            Elegância no ambiente e excelência no prato
+            <br />
+            Nova essência da tradição
           </p>
         </div>
         <div>
