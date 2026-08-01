@@ -61,13 +61,26 @@ function Cardapio() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl">Cardápio</h1>
+      <h1 className="font-display text-3xl sm:text-4xl">Cardápio</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         {resultados.length} {resultados.length === 1 ? "prato encontrado" : "pratos encontrados"}
       </p>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)]">
-        <aside className="space-y-6 rounded-xl border border-border/70 bg-card p-5 lg:sticky lg:top-24 lg:self-start">
+      <Button
+        type="button"
+        variant="outline"
+        className="mt-6 w-full lg:hidden"
+        aria-expanded={filtrosAbertos}
+        onClick={() => setFiltrosAbertos((v) => !v)}
+      >
+        <SlidersHorizontal className="mr-2 h-4 w-4" aria-hidden />
+        {filtrosAbertos ? "Ocultar filtros" : "Filtrar e buscar"}
+      </Button>
+
+      <div className="mt-6 grid gap-8 lg:mt-8 lg:grid-cols-[260px_minmax(0,1fr)]">
+        <aside
+          className={`${filtrosAbertos ? "block" : "hidden"} space-y-6 rounded-xl border border-border/70 bg-card p-4 sm:p-5 lg:sticky lg:top-24 lg:block lg:self-start`}
+        >
           <div>
             <Label htmlFor="busca">Buscar</Label>
             <div className="relative mt-2">
