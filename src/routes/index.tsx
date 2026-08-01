@@ -39,9 +39,6 @@ function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/25" />
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 md:py-36">
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 px-3 py-1 text-xs uppercase tracking-widest text-accent">
-            <Sparkles className="h-3.5 w-3.5" aria-hidden /> Brasa, alho e fogo baixo
-          </span>
           <h1 className="mt-6 max-w-2xl text-balance-title font-display text-4xl leading-[1.05] sm:text-6xl">
             A brasa começa aqui. O resto entregamos na sua mesa.
           </h1>
