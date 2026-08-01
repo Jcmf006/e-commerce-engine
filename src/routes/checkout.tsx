@@ -91,11 +91,11 @@ function Checkout() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl">Checkout</h1>
+      <h1 className="font-display text-3xl sm:text-4xl">Checkout</h1>
 
       <form onSubmit={finalizar} className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div className="space-y-6">
-          <fieldset className="rounded-xl border border-border/70 bg-card p-5">
+          <fieldset className="rounded-xl border border-border/70 bg-card p-4 sm:p-5">
             <legend className="px-2 font-display text-lg">1. Identificação</legend>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
@@ -122,7 +122,7 @@ function Checkout() {
             </p>
           </fieldset>
 
-          <fieldset className="rounded-xl border border-border/70 bg-card p-5">
+          <fieldset className="rounded-xl border border-border/70 bg-card p-4 sm:p-5">
             <legend className="px-2 font-display text-lg">2. Endereço de entrega</legend>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
@@ -160,7 +160,7 @@ function Checkout() {
             </div>
           </fieldset>
 
-          <fieldset className="rounded-xl border border-border/70 bg-card p-5">
+          <fieldset className="rounded-xl border border-border/70 bg-card p-4 sm:p-5">
             <legend className="px-2 font-display text-lg">3. Pagamento</legend>
             <div className="grid gap-3 sm:grid-cols-3">
               {[

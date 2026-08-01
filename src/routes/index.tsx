@@ -37,75 +37,80 @@ function Home() {
           height={1000}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/25" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 md:py-36">
-          <h1 className="mt-6 max-w-2xl text-balance-title font-display text-4xl leading-[1.05] sm:text-6xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95 md:bg-gradient-to-r md:from-background md:via-background/85 md:to-background/25" />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 md:py-36">
+          <h1 className="max-w-2xl text-balance-title font-display text-3xl leading-[1.1] sm:text-5xl md:text-6xl md:leading-[1.05]">
             A brasa começa aqui. O resto entregamos na sua mesa.
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-base md:text-lg">
             Frango à Parmegiana que conquista pelo crocante e pelo cremoso: filé empanado na hora,
             frito na medida certa, coberto com molho de tomate artesanal e generosa camada de
             mussarela gratinada. Acompanha arroz soltinho. Peça pelo delivery ou retire na loja.
             Sabor que vira tradição!
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild size="lg">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link to="/cardapio">
                 Ver cardápio <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
               <Link to="/lojas">Peça e retire</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-4 px-4 py-12 sm:grid-cols-3 sm:px-6">
+      <section className="mx-auto grid max-w-7xl gap-4 px-4 py-10 sm:grid-cols-3 sm:px-6 sm:py-12">
         {[
           { icon: Clock, titulo: "Pronto em 35 min", texto: "Cozinha ágil, brasa sempre acesa." },
           { icon: MapPin, titulo: "Retirada agendada", texto: "Escolha loja e horário no checkout." },
           { icon: Sparkles, titulo: "Feito na hora", texto: "Ingredientes frescos e preparo artesanal." },
         ].map(({ icon: Icon, titulo, texto }) => (
-          <div key={titulo} className="rounded-xl border border-border/70 bg-card p-5">
+          <div key={titulo} className="rounded-xl border border-border/70 bg-card p-4 sm:p-5">
             <Icon className="h-5 w-5 text-accent" aria-hidden />
-            <h2 className="mt-3 font-display text-lg">{titulo}</h2>
+            <h2 className="mt-3 font-display text-base sm:text-lg">{titulo}</h2>
             <p className="mt-1 text-sm text-muted-foreground">{texto}</p>
           </div>
         ))}
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <h2 className="font-display text-3xl">Favoritos da casa</h2>
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4 sm:flex sm:flex-wrap sm:justify-between">
+          <div className="min-w-0">
+            <h2 className="font-display text-2xl sm:text-3xl">Favoritos da casa</h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Os pratos que mais saem da nossa brasa.
             </p>
           </div>
           <Link
             to="/cardapio"
-            className="text-sm text-accent underline-offset-4 hover:underline"
+            className="shrink-0 text-sm text-accent underline-offset-4 hover:underline"
           >
             Ver tudo
           </Link>
         </div>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {destaques.map((p) => (
             <ProductCard key={p.id} prato={p} />
           ))}
         </div>
       </section>
 
-      <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-        <div className="bloco-destaque flex flex-wrap items-center justify-between gap-6 rounded-2xl p-8 sm:p-12">
+      <section className="mx-auto mt-12 max-w-7xl px-4 sm:mt-16 sm:px-6">
+        <div className="bloco-destaque flex flex-col items-start gap-6 rounded-2xl p-6 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:p-12">
           <div className="min-w-0">
-            <h2 className="font-display text-3xl text-foreground">Peça agora</h2>
+            <h2 className="font-display text-2xl text-foreground sm:text-3xl">Peça agora</h2>
             <p className="mt-2 max-w-md text-sm text-foreground/85">
               Delivery rápido ou retirada na loja: seu prato favorito sai quentinho da nossa cozinha.
             </p>
           </div>
-          <Button asChild size="lg" variant="secondary" className="botao-destaque font-semibold">
+          <Button
+            asChild
+            size="lg"
+            variant="secondary"
+            className="botao-destaque w-full font-semibold sm:w-auto"
+          >
             <Link to="/cardapio">Ver cardápio</Link>
           </Button>
         </div>

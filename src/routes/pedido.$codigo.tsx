@@ -19,9 +19,9 @@ function PedidoConfirmado() {
   const { codigo } = Route.useParams();
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-24 text-center sm:px-6">
+    <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6 sm:py-24">
       <CheckCircle2 className="mx-auto h-14 w-14 text-accent" aria-hidden />
-      <h1 className="mt-6 font-display text-4xl">Pedido confirmado!</h1>
+      <h1 className="mt-6 font-display text-3xl sm:text-4xl">Pedido confirmado!</h1>
       <p className="mt-3 text-sm text-muted-foreground">
         Número do pedido:{" "}
         <strong className="font-display text-base text-foreground">{codigo}</strong>

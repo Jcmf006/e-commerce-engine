@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Search } from "lucide-react";
+import { Search, SlidersHorizontal } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { Button } from "@/components/ui/button";
@@ -36,6 +36,7 @@ function Cardapio() {
   const [precoMax, setPrecoMax] = useState(150);
   const [notaMin, setNotaMin] = useState(0);
   const [soDisponiveis, setSoDisponiveis] = useState(false);
+  const [filtrosAbertos, setFiltrosAbertos] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setBuscaDebounced(busca.trim().toLowerCase()), 300);
@@ -61,13 +62,26 @@ function Cardapio() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl">Cardápio</h1>
+      <h1 className="font-display text-3xl sm:text-4xl">Cardápio</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         {resultados.length} {resultados.length === 1 ? "prato encontrado" : "pratos encontrados"}
       </p>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)]">
-        <aside className="space-y-6 rounded-xl border border-border/70 bg-card p-5 lg:sticky lg:top-24 lg:self-start">
+      <Button
+        type="button"
+        variant="outline"
+        className="mt-6 w-full lg:hidden"
+        aria-expanded={filtrosAbertos}
+        onClick={() => setFiltrosAbertos((v) => !v)}
+      >
+        <SlidersHorizontal className="mr-2 h-4 w-4" aria-hidden />
+        {filtrosAbertos ? "Ocultar filtros" : "Filtrar e buscar"}
+      </Button>
+
+      <div className="mt-6 grid gap-8 lg:mt-8 lg:grid-cols-[260px_minmax(0,1fr)]">
+        <aside
+          className={`${filtrosAbertos ? "block" : "hidden"} space-y-6 rounded-xl border border-border/70 bg-card p-4 sm:p-5 lg:sticky lg:top-24 lg:block lg:self-start`}
+        >
           <div>
             <Label htmlFor="busca">Buscar</Label>
             <div className="relative mt-2">
@@ -166,7 +180,7 @@ function Cardapio() {
               Nenhum prato encontrado com esses filtros.
             </p>
           ) : (
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:gap-5 xl:grid-cols-3">
               {resultados.map((p) => (
                 <ProductCard key={p.id} prato={p} />
               ))}
