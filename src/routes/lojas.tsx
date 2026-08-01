@@ -21,12 +21,12 @@ export const Route = createFileRoute("/lojas")({
 function Lojas() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl">Nossas lojas</h1>
+      <h1 className="font-display text-4xl">Nossa loja</h1>
       <p className="mt-2 max-w-xl text-sm text-muted-foreground">
-        Peça online e retire no balcão sem fila. Escolha a unidade e o horário na hora de finalizar.
+        Peça online e retire no balcão sem fila. Escolha o horário na hora de finalizar.
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-5 sm:max-w-md">
         {LOJAS.map((loja) => (
           <article key={loja.nome} className="rounded-xl border border-border/70 bg-card p-5">
             <h2 className="font-display text-lg">{loja.nome}</h2>
