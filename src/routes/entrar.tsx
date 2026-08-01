@@ -24,8 +24,8 @@ function Entrar() {
   const [modo, setModo] = useState<"login" | "cadastro">("login");
 
   return (
-    <div className="mx-auto max-w-md px-4 py-20 sm:px-6">
-      <h1 className="font-display text-3xl">
+    <div className="mx-auto max-w-md px-4 py-12 sm:px-6 sm:py-20">
+      <h1 className="font-display text-2xl sm:text-3xl">
         {modo === "login" ? "Entrar na conta" : "Criar conta"}
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
@@ -33,7 +33,7 @@ function Entrar() {
       </p>
 
       <form
-        className="mt-8 space-y-4 rounded-xl border border-border/70 bg-card p-6"
+        className="mt-8 space-y-4 rounded-xl border border-border/70 bg-card p-5 sm:p-6"
         onSubmit={(e) => {
           e.preventDefault();
           toast.info("Autenticação real chega quando ligarmos o backend do projeto.");

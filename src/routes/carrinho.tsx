@@ -34,7 +34,7 @@ function Carrinho() {
   if (itens.length === 0) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-24 text-center sm:px-6">
-        <h1 className="font-display text-3xl">Seu carrinho está vazio</h1>
+        <h1 className="font-display text-2xl sm:text-3xl">Seu carrinho está vazio</h1>
         <p className="mt-3 text-sm text-muted-foreground">
           Que tal começar pela nossa Cebola em Flor?
         </p>
@@ -47,7 +47,7 @@ function Carrinho() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl">Seu carrinho</h1>
+      <h1 className="font-display text-3xl sm:text-4xl">Seu carrinho</h1>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
         <ul className="space-y-4">

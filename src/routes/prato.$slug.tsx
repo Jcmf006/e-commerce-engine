@@ -61,7 +61,7 @@ function PratoPage() {
         / <span className="text-foreground">{prato.nome}</span>
       </nav>
 
-      <div className="mt-6 grid gap-10 lg:grid-cols-2">
+      <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-10">
         <div className="overflow-hidden rounded-2xl border border-border/70">
           <img
             src={prato.imagem}
@@ -74,7 +74,7 @@ function PratoPage() {
 
         <div>
           <span className="text-xs uppercase tracking-widest text-accent">{prato.categoria}</span>
-          <h1 className="mt-2 font-display text-4xl">{prato.nome}</h1>
+          <h1 className="mt-2 font-display text-2xl sm:text-3xl md:text-4xl">{prato.nome}</h1>
           <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
             <span className="flex items-center gap-1 text-accent">
               <Star className="h-4 w-4 fill-current" aria-hidden />
@@ -88,7 +88,7 @@ function PratoPage() {
             {prato.precoDe && (
               <span className="text-sm text-muted-foreground line-through">{brl(prato.precoDe)}</span>
             )}
-            <span className="font-display text-3xl">{brl(precoFinal)}</span>
+            <span className="font-display text-2xl sm:text-3xl">{brl(precoFinal)}</span>
           </div>
 
           {(prato.variacoes ?? []).map((v) => (
@@ -115,8 +115,8 @@ function PratoPage() {
             </fieldset>
           ))}
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <div className="flex items-center rounded-full border border-border">
+          <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="flex w-fit items-center rounded-full border border-border">
               <button
                 type="button"
                 aria-label="Diminuir quantidade"
@@ -139,6 +139,7 @@ function PratoPage() {
             </div>
             <Button
               size="lg"
+              className="w-full sm:w-auto"
               disabled={prato.estoque === 0}
               onClick={() => {
                 adicionar({
@@ -165,9 +166,9 @@ function PratoPage() {
         </div>
       </div>
 
-      <section className="mt-20">
-        <h2 className="font-display text-2xl">Quem pediu, pediu junto</h2>
-        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="mt-14 sm:mt-20">
+        <h2 className="font-display text-xl sm:text-2xl">Quem pediu, pediu junto</h2>
+        <div className="mt-6 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {relacionados.map((p) => (
             <ProductCard key={p.id} prato={p} />
           ))}

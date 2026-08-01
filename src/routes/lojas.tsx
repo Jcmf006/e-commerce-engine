@@ -21,7 +21,7 @@ export const Route = createFileRoute("/lojas")({
 function Lojas() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl">Nossa loja</h1>
+      <h1 className="font-display text-3xl sm:text-4xl">Nossa loja</h1>
       <p className="mt-2 max-w-xl text-sm text-muted-foreground">
         Peça online e retire no balcão sem fila. Escolha o horário na hora de finalizar.
       </p>
