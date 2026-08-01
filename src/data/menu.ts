@@ -270,6 +270,6 @@ export const LOJAS = [
   {
     nome: "Bistrô Alho",
     endereco: "R. Manoel Gomes da Rocha, 311 — Luzia, Aracaju/SE",
-    horario: "18h às 23h",
+    horario: "Terça a Dom | 11:15h às 15h",
   },
 ];
