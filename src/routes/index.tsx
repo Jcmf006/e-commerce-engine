@@ -37,24 +37,24 @@ function Home() {
           height={1000}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/25" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 md:py-36">
-          <h1 className="mt-6 max-w-2xl text-balance-title font-display text-4xl leading-[1.05] sm:text-6xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95 md:bg-gradient-to-r md:from-background md:via-background/85 md:to-background/25" />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 md:py-36">
+          <h1 className="max-w-2xl text-balance-title font-display text-3xl leading-[1.1] sm:text-5xl md:text-6xl md:leading-[1.05]">
             A brasa começa aqui. O resto entregamos na sua mesa.
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-base md:text-lg">
             Frango à Parmegiana que conquista pelo crocante e pelo cremoso: filé empanado na hora,
             frito na medida certa, coberto com molho de tomate artesanal e generosa camada de
             mussarela gratinada. Acompanha arroz soltinho. Peça pelo delivery ou retire na loja.
             Sabor que vira tradição!
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild size="lg">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link to="/cardapio">
                 Ver cardápio <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
               <Link to="/lojas">Peça e retire</Link>
             </Button>
           </div>
