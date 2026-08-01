@@ -267,7 +267,9 @@ export const VENDAS_SEMANA = [
 ];
 
 export const LOJAS = [
-  { nome: "Bistrô Alho — Jardins", endereco: "Rua Oscar Freire, 1200 — São Paulo/SP", horario: "12h às 23h" },
-  { nome: "Bistrô Alho — Barra", endereco: "Av. das Américas, 4500 — Rio de Janeiro/RJ", horario: "12h às 00h" },
-  { nome: "Bistrô Alho — Savassi", endereco: "Rua Pernambuco, 890 — Belo Horizonte/MG", horario: "18h às 23h" },
+  {
+    nome: "Bistrô Alho",
+    endereco: "R. Manoel Gomes da Rocha, 311 — Luzia, Aracaju/SE",
+    horario: "18h às 23h",
+  },
 ];
