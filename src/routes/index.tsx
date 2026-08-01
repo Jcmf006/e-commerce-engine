@@ -68,7 +68,7 @@ function Home() {
         {[
           { icon: Clock, titulo: "Pronto em 35 min", texto: "Cozinha ágil, brasa sempre acesa." },
           { icon: MapPin, titulo: "Retirada agendada", texto: "Escolha loja e horário no checkout." },
-          { icon: Sparkles, titulo: "Clube Alho", texto: "1 ponto por real gasto, troque por pratos." },
+          { icon: Sparkles, titulo: "Feito na hora", texto: "Ingredientes frescos e preparo artesanal." },
         ].map(({ icon: Icon, titulo, texto }) => (
           <div key={titulo} className="rounded-xl border border-border/70 bg-card p-5">
             <Icon className="h-5 w-5 text-accent" aria-hidden />
@@ -103,13 +103,13 @@ function Home() {
       <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
         <div className="gradiente-brasa sombra-brasa flex flex-wrap items-center justify-between gap-6 rounded-2xl p-8 sm:p-12">
           <div className="min-w-0">
-            <h2 className="font-display text-3xl text-primary-foreground">Clube Alho</h2>
+            <h2 className="font-display text-3xl text-primary-foreground">Peça agora</h2>
             <p className="mt-2 max-w-md text-sm text-primary-foreground/90">
-              Acumule 1 ponto por real gasto e troque por entradas, sobremesas e cortes especiais.
+              Delivery rápido ou retirada na loja: seu prato favorito sai quentinho da nossa cozinha.
             </p>
           </div>
           <Button asChild size="lg" variant="secondary">
-            <Link to="/entrar">Criar minha conta</Link>
+            <Link to="/cardapio">Ver cardápio</Link>
           </Button>
         </div>
       </section>

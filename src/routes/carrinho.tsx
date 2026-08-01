@@ -22,7 +22,7 @@ export const Route = createFileRoute("/carrinho")({
 });
 
 function Carrinho() {
-  const { itens, atualizar, remover, subtotal, pontos } = useCart();
+  const { itens, atualizar, remover, subtotal } = useCart();
   const [cupom, setCupom] = useState("");
   const [aplicado, setAplicado] = useState<{ codigo: string; desconto: number } | null>(null);
   const [cep, setCep] = useState("");
@@ -188,10 +188,6 @@ function Carrinho() {
             </div>
           </dl>
 
-          <p className="rounded-lg bg-secondary p-3 text-xs text-muted-foreground">
-            Você acumula <strong className="text-accent">{pontos} pontos</strong> no Clube Alho com
-            este pedido.
-          </p>
 
           <Button asChild size="lg" className="w-full">
             <Link to="/checkout">Ir para o checkout</Link>

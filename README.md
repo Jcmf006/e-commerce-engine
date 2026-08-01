@@ -6,7 +6,7 @@ Loja online (restaurante) construída com TanStack Start, React 19, Tailwind CSS
 
 | Rota | Descrição |
 | --- | --- |
-| `/` | Home com hero, destaques e Clube Alho |
+| `/` | Home com hero e destaques |
 | `/cardapio` | Catálogo com busca (debounce), filtros de categoria, preço, avaliação e disponibilidade |
 | `/prato/$slug` | Página do prato com variações, quantidade e sugestões |
 | `/carrinho` | Carrinho persistente (localStorage), frete por CEP e cupom |
