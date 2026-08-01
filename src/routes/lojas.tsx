@@ -36,7 +36,7 @@ function Lojas() {
             </p>
             <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
               <Clock className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-              Todos os dias, {loja.horario}
+              {loja.horario}
             </p>
           </article>
         ))}
