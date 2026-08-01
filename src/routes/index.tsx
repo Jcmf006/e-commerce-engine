@@ -61,51 +61,56 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-4 px-4 py-12 sm:grid-cols-3 sm:px-6">
+      <section className="mx-auto grid max-w-7xl gap-4 px-4 py-10 sm:grid-cols-3 sm:px-6 sm:py-12">
         {[
           { icon: Clock, titulo: "Pronto em 35 min", texto: "Cozinha ágil, brasa sempre acesa." },
           { icon: MapPin, titulo: "Retirada agendada", texto: "Escolha loja e horário no checkout." },
           { icon: Sparkles, titulo: "Feito na hora", texto: "Ingredientes frescos e preparo artesanal." },
         ].map(({ icon: Icon, titulo, texto }) => (
-          <div key={titulo} className="rounded-xl border border-border/70 bg-card p-5">
+          <div key={titulo} className="rounded-xl border border-border/70 bg-card p-4 sm:p-5">
             <Icon className="h-5 w-5 text-accent" aria-hidden />
-            <h2 className="mt-3 font-display text-lg">{titulo}</h2>
+            <h2 className="mt-3 font-display text-base sm:text-lg">{titulo}</h2>
             <p className="mt-1 text-sm text-muted-foreground">{texto}</p>
           </div>
         ))}
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <h2 className="font-display text-3xl">Favoritos da casa</h2>
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4 sm:flex sm:flex-wrap sm:justify-between">
+          <div className="min-w-0">
+            <h2 className="font-display text-2xl sm:text-3xl">Favoritos da casa</h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Os pratos que mais saem da nossa brasa.
             </p>
           </div>
           <Link
             to="/cardapio"
-            className="text-sm text-accent underline-offset-4 hover:underline"
+            className="shrink-0 text-sm text-accent underline-offset-4 hover:underline"
           >
             Ver tudo
           </Link>
         </div>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {destaques.map((p) => (
             <ProductCard key={p.id} prato={p} />
           ))}
         </div>
       </section>
 
-      <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-        <div className="bloco-destaque flex flex-wrap items-center justify-between gap-6 rounded-2xl p-8 sm:p-12">
+      <section className="mx-auto mt-12 max-w-7xl px-4 sm:mt-16 sm:px-6">
+        <div className="bloco-destaque flex flex-col items-start gap-6 rounded-2xl p-6 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:p-12">
           <div className="min-w-0">
-            <h2 className="font-display text-3xl text-foreground">Peça agora</h2>
+            <h2 className="font-display text-2xl text-foreground sm:text-3xl">Peça agora</h2>
             <p className="mt-2 max-w-md text-sm text-foreground/85">
               Delivery rápido ou retirada na loja: seu prato favorito sai quentinho da nossa cozinha.
             </p>
           </div>
-          <Button asChild size="lg" variant="secondary" className="botao-destaque font-semibold">
+          <Button
+            asChild
+            size="lg"
+            variant="secondary"
+            className="botao-destaque w-full font-semibold sm:w-auto"
+          >
             <Link to="/cardapio">Ver cardápio</Link>
           </Button>
         </div>
