@@ -1,29 +1,50 @@
-# Welcome to your Lovable project
+# Bistrô Alho — Loja online
 
-This project was built with [Lovable](https://lovable.dev).
+Loja online (restaurante) construída com TanStack Start, React 19, Tailwind CSS v4 e shadcn/ui.
 
-## Build with Lovable
+## Rotas
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+| Rota | Descrição |
+| --- | --- |
+| `/` | Home com hero, destaques e Clube Alho |
+| `/cardapio` | Catálogo com busca (debounce), filtros de categoria, preço, avaliação e disponibilidade |
+| `/prato/$slug` | Página do prato com variações, quantidade e sugestões |
+| `/carrinho` | Carrinho persistente (localStorage), frete por CEP e cupom |
+| `/checkout` | Identificação, endereço com ViaCEP, pagamento (Pix/Cartão/Boleto — sandbox) |
+| `/pedido/$codigo` | Confirmação com número do pedido |
+| `/entrar` | Login/cadastro (UI; autenticação real ao ligar o backend) |
+| `/lojas` | Unidades e horários para retirada |
+| `/admin` | Painel: CRUD de pratos, pedidos, relatórios e alertas de estoque |
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Estrutura
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+```
+src/
+  assets/       imagens dos pratos e hero
+  components/
+    molecules/  ProductCard
+    organisms/  Header, Footer
+    ui/         shadcn
+  context/      CartContext (carrinho global + localStorage)
+  data/         menu.ts (dados mockados: pratos, pedidos, cupons, lojas)
+  routes/       rotas (file-based routing)
+  utils/        formatação de moeda e código de pedido
 ```
 
-## Built with
+## Rodando
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+```bash
+bun install
+bun run dev     # http://localhost:8080
+bun run build   # build de produção
+```
+
+## Estado atual e próximos passos
+
+Front-end completo com dados mockados. Próxima etapa: ligar o backend (Lovable Cloud) para
+autenticação real, catálogo e pedidos no banco, cupons validados no servidor e pagamento em sandbox.
+
+## Cupons de teste
+
+- `ALHO10` — 10% de desconto
+- `BRASA20` — 20% de desconto
