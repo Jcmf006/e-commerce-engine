@@ -5,13 +5,14 @@ import { LOJAS } from "@/data/menu";
 export const Route = createFileRoute("/lojas")({
   head: () => ({
     meta: [
-      { title: "Nossas lojas — Bistrô Alho" },
+      { title: "Nossa loja — Bistrô Alho" },
       {
         name: "description",
-        content: "Endereços e horários das unidades do Bistrô Alho em SP, RJ e BH. Peça e retire.",
+        content:
+          "Bistrô Alho em Aracaju/SE: R. Manoel Gomes da Rocha, 311 — Luzia. Peça online e retire no balcão.",
       },
-      { property: "og:title", content: "Nossas lojas — Bistrô Alho" },
-      { property: "og:description", content: "Encontre a unidade mais próxima e agende sua retirada." },
+      { property: "og:title", content: "Nossa loja — Bistrô Alho" },
+      { property: "og:description", content: "Endereço e horário da nossa unidade em Aracaju/SE." },
     ],
   }),
   component: Lojas,
