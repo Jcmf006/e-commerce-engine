@@ -18,13 +18,13 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-4 sm:px-6">
         <div className="flex min-w-0 items-center gap-8">
-          <Link to="/" className="flex min-w-0 items-center gap-2">
+          <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
               src={logo.url}
               alt="Alho Bistrô"
-              width={40}
-              height={40}
-              className="h-10 w-10 shrink-0 rounded-full object-cover"
+              width={56}
+              height={56}
+              className="h-14 w-14 shrink-0 rounded-full object-cover"
             />
             <span className="truncate font-display text-lg font-semibold tracking-tight">
               Alho Bistrô
