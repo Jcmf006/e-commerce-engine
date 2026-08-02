@@ -29,17 +29,18 @@ function Home() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden">
-        <img
-          src={heroImg}
-          alt="Caneca de cerveja gelada com espuma dourada e espigas de trigo, promocional Alho Bistrô"
-          width={1600}
-          height={1000}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95 md:bg-gradient-to-r md:from-background md:via-background/85 md:to-background/25" />
-        <div className="relative mx-auto flex max-w-7xl flex-col items-start px-4 py-16 sm:px-6 sm:py-24 md:py-36">
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+      <section className="relative isolate overflow-hidden bg-background">
+        <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6">
+          <img
+            src={heroImg}
+            alt="Caneca de cerveja gelada com espuma dourada e espigas de trigo, promocional Alho Bistrô"
+            width={1600}
+            height={1000}
+            className="mx-auto block max-h-[52vh] w-full rounded-2xl object-contain"
+          />
+        </div>
+        <div className="relative mx-auto flex max-w-7xl flex-col items-start px-4 py-8 sm:px-6 sm:py-10">
+          <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Button asChild size="lg" className="w-full sm:w-auto">
               <Link to="/cardapio">
                 Ver cardápio <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -51,6 +52,7 @@ function Home() {
           </div>
         </div>
       </section>
+
 
       <section className="mx-auto grid max-w-7xl gap-4 px-4 py-10 sm:grid-cols-3 sm:px-6 sm:py-12">
         {[
