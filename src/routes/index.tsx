@@ -39,7 +39,7 @@ function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95 md:bg-gradient-to-r md:from-background md:via-background/85 md:to-background/25" />
         <div className="relative mx-auto flex max-w-7xl flex-col items-start px-4 py-16 sm:px-6 sm:py-24 md:py-36">
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Button asChild size="lg" className="w-full sm:w-auto">
               <Link to="/cardapio">
                 Ver cardápio <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
