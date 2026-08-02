@@ -1,14 +1,10 @@
-import steak from "@/assets/prato-steak.jpg";
-import costela from "@/assets/prato-costela.jpg";
-import cebola from "@/assets/prato-cebola.jpg";
-import paoAlho from "@/assets/prato-pao-alho.jpg";
-import frango from "@/assets/prato-frango.jpg";
-import salmao from "@/assets/prato-salmao.jpg";
-import burger from "@/assets/prato-burger.jpg";
-import salada from "@/assets/prato-salada.jpg";
-import brownie from "@/assets/prato-brownie.jpg";
+import prato1 from "@/assets/prato_1.jpeg.asset.json";
+import prato2 from "@/assets/prato_2.jpeg.asset.json";
+import prato3 from "@/assets/prato_3.jpeg.asset.json";
+import prato4 from "@/assets/prato_4.jpeg.asset.json";
+import prato5 from "@/assets/prato_5.jpeg.asset.json";
 
-export type Categoria = "Entradas" | "Carnes" | "Peixes" | "Burgers" | "Saladas" | "Sobremesas";
+export type Categoria = "Entradas" | "Carnes" | "Frutos do Mar" | "Massas";
 
 export type Variacao = {
   nome: string;
@@ -32,30 +28,23 @@ export type Prato = {
   variacoes?: Variacao[];
 };
 
-export const CATEGORIAS: Categoria[] = [
-  "Entradas",
-  "Carnes",
-  "Peixes",
-  "Burgers",
-  "Saladas",
-  "Sobremesas",
-];
+export const CATEGORIAS: Categoria[] = ["Entradas", "Carnes", "Frutos do Mar", "Massas"];
 
 export const PRATOS: Prato[] = [
   {
     id: "1",
-    slug: "cebola-em-flor",
-    nome: "Cebola em Flor",
-    descricao: "Cebola gigante empanada, crocante, com molho especial da casa.",
+    slug: "iscas-de-frango-empanadas",
+    nome: "Iscas de Frango Empanadas",
+    descricao: "Tiras de frango empanadas crocantes sobre mix de folhas frescas.",
     descricaoLonga:
-      "Nossa entrada assinatura: uma cebola inteira aberta em pétalas, empanada em tempero secreto e frita até o ponto exato de crocância. Servida com o molho Alho Ranch.",
-    preco: 49.9,
-    precoDe: 59.9,
+      "Iscas de peito de frango marinadas em ervas, empanadas na hora em farinha crocante e fritas no ponto exato. Servidas sobre mix de folhas frescas com cebola roxa e molho da casa.",
+    preco: 46.9,
+    precoDe: 54.9,
     categoria: "Entradas",
-    imagem: cebola,
-    avaliacao: 4.9,
-    avaliacoes: 1284,
-    estoque: 40,
+    imagem: (prato2 as { url: string }).url,
+    avaliacao: 4.8,
+    avaliacoes: 512,
+    estoque: 30,
     destaque: true,
     variacoes: [
       {
@@ -70,164 +59,91 @@ export const PRATOS: Prato[] = [
   },
   {
     id: "2",
-    slug: "pao-de-alho-confit",
-    nome: "Pão de Alho Confit",
-    descricao: "Pão rústico com manteiga de alho confitado e ervas frescas.",
+    slug: "file-ao-molho-madeira",
+    nome: "Filé ao Molho Madeira",
+    descricao: "Iscas de filé ao molho madeira com arroz cremoso de parmesão.",
     descricaoLonga:
-      "Pão de fermentação natural assado na brasa, coberto com manteiga de alho confitado por 6 horas e finalizado com salsinha fresca.",
-    preco: 26.9,
-    categoria: "Entradas",
-    imagem: paoAlho,
-    avaliacao: 4.7,
-    avaliacoes: 642,
-    estoque: 8,
+      "Iscas de filé bovino selado e finalizado em molho madeira encorpado com cebolas caramelizadas, acompanhado de arroz cremoso de parmesão.",
+    preco: 89.9,
+    categoria: "Carnes",
+    imagem: (prato1 as { url: string }).url,
+    avaliacao: 4.9,
+    avaliacoes: 734,
+    estoque: 20,
+    destaque: true,
     variacoes: [
       {
-        nome: "Tamanho",
+        nome: "Acompanhamento",
         opcoes: [
-          { label: "Individual", extra: 0 },
-          { label: "Para compartilhar", extra: 14 },
+          { label: "Arroz cremoso", extra: 0 },
+          { label: "Purê trufado", extra: 12 },
+          { label: "Legumes na manteiga", extra: 8 },
         ],
       },
     ],
   },
   {
     id: "3",
-    slug: "ribeye-na-brasa",
-    nome: "Ribeye na Brasa",
-    descricao: "400g de ribeye maturado com manteiga de alho e alecrim.",
+    slug: "escondidinho-gratinado",
+    nome: "Escondidinho Gratinado",
+    descricao: "Purê aveludado de batata gratinado com parmesão e crosta dourada.",
     descricaoLonga:
-      "Ribeye maturado 28 dias, selado na brasa de carvão e finalizado com manteiga de alho e alecrim. Acompanha batata rústica ou purê trufado.",
-    preco: 139.9,
+      "Camada generosa de carne desfiada coberta por purê aveludado de batata, polvilhado com parmesão e gratinado até formar uma crosta dourada irresistível.",
+    preco: 64.9,
     categoria: "Carnes",
-    imagem: steak,
-    avaliacao: 5,
-    avaliacoes: 903,
-    estoque: 22,
-    destaque: true,
+    imagem: (prato3 as { url: string }).url,
+    avaliacao: 4.7,
+    avaliacoes: 389,
+    estoque: 24,
     variacoes: [
       {
-        nome: "Ponto",
+        nome: "Recheio",
         opcoes: [
-          { label: "Mal passado", extra: 0 },
-          { label: "Ao ponto", extra: 0 },
-          { label: "Bem passado", extra: 0 },
-        ],
-      },
-      {
-        nome: "Acompanhamento",
-        opcoes: [
-          { label: "Batata rústica", extra: 0 },
-          { label: "Purê trufado", extra: 12 },
-          { label: "Legumes na brasa", extra: 8 },
+          { label: "Carne desfiada", extra: 0 },
+          { label: "Carne seca", extra: 10 },
+          { label: "Frango cremoso", extra: 0 },
         ],
       },
     ],
   },
   {
     id: "4",
-    slug: "costela-bbq",
-    nome: "Costela BBQ 8 Horas",
-    descricao: "Costela suína defumada lentamente, glaceada no barbecue artesanal.",
+    slug: "lasanha-a-bolonhesa",
+    nome: "Lasanha à Bolonhesa",
+    descricao: "Massa fresca, ragu bolonhesa, bechamel e queijo gratinado.",
     descricaoLonga:
-      "Costela defumada por 8 horas em madeira de macieira e glaceada com nosso barbecue artesanal de melado e café.",
-    preco: 118.9,
-    precoDe: 132.9,
-    categoria: "Carnes",
-    imagem: costela,
-    avaliacao: 4.8,
-    avaliacoes: 771,
-    estoque: 15,
+      "Camadas de massa fresca intercaladas com ragu bolonhesa cozido lentamente, molho bechamel sedoso e muito queijo gratinado, finalizada com parmesão e manjericão.",
+    preco: 72.9,
+    precoDe: 82.9,
+    categoria: "Massas",
+    imagem: (prato4 as { url: string }).url,
+    avaliacao: 4.9,
+    avaliacoes: 826,
+    estoque: 18,
     destaque: true,
     variacoes: [
       {
         nome: "Porção",
         opcoes: [
-          { label: "Meia costela", extra: 0 },
-          { label: "Costela inteira", extra: 45 },
+          { label: "Individual", extra: 0 },
+          { label: "Para dois", extra: 38 },
         ],
       },
     ],
   },
   {
     id: "5",
-    slug: "frango-parmegiana",
-    nome: "Frango à Parmegiana",
-    descricao: "Filé empanado, molho pomodoro e muçarela gratinada.",
+    slug: "camarao-ao-molho-cremoso",
+    nome: "Camarão ao Molho Cremoso",
+    descricao: "Camarões salteados em molho cremoso com arroz de brócolis.",
     descricaoLonga:
-      "Filé de frango empanado na hora, coberto com molho pomodoro de tomates italianos e muçarela de búfala gratinada.",
-    preco: 74.9,
-    categoria: "Carnes",
-    imagem: frango,
-    avaliacao: 4.6,
-    avaliacoes: 388,
-    estoque: 30,
-  },
-  {
-    id: "6",
-    slug: "salmao-grelhado",
-    nome: "Salmão Grelhado",
-    descricao: "Salmão na grelha com aspargos e manteiga de limão siciliano.",
-    descricaoLonga:
-      "Filé de salmão fresco grelhado no ponto, servido com aspargos salteados e manteiga de limão siciliano.",
-    preco: 96.9,
-    categoria: "Peixes",
-    imagem: salmao,
-    avaliacao: 4.7,
-    avaliacoes: 254,
+      "Camarões grandes salteados na manteiga com abobrinha e tomate, envolvidos em molho cremoso levemente apimentado. Acompanha arroz de brócolis soltinho.",
+    preco: 108.9,
+    categoria: "Frutos do Mar",
+    imagem: (prato5 as { url: string }).url,
+    avaliacao: 5,
+    avaliacoes: 421,
     estoque: 12,
-  },
-  {
-    id: "7",
-    slug: "burger-do-bistro",
-    nome: "Burger do Bistrô",
-    descricao: "Blend 180g, cheddar inglês, bacon caramelizado e pão brioche.",
-    descricaoLonga:
-      "Blend exclusivo de fraldinha e acém, cheddar inglês derretido, bacon caramelizado no melado e pão brioche artesanal.",
-    preco: 62.9,
-    categoria: "Burgers",
-    imagem: burger,
-    avaliacao: 4.8,
-    avaliacoes: 526,
-    estoque: 26,
-    variacoes: [
-      {
-        nome: "Extras",
-        opcoes: [
-          { label: "Sem extras", extra: 0 },
-          { label: "Cheddar extra", extra: 9 },
-          { label: "Burger duplo", extra: 22 },
-        ],
-      },
-    ],
-  },
-  {
-    id: "8",
-    slug: "caesar-do-chef",
-    nome: "Caesar do Chef",
-    descricao: "Alface romana, frango grelhado, croutons e parmesão.",
-    descricaoLonga:
-      "Alface romana crocante, frango grelhado na brasa, croutons de pão de alho e lascas generosas de parmesão com molho caesar da casa.",
-    preco: 54.9,
-    categoria: "Saladas",
-    imagem: salada,
-    avaliacao: 4.5,
-    avaliacoes: 197,
-    estoque: 0,
-  },
-  {
-    id: "9",
-    slug: "brownie-na-brasa",
-    nome: "Brownie na Brasa",
-    descricao: "Brownie quente, sorvete de baunilha e calda de caramelo salgado.",
-    descricaoLonga:
-      "Brownie de chocolate 70% servido quente, com sorvete de baunilha bourbon e calda de caramelo salgado.",
-    preco: 38.9,
-    categoria: "Sobremesas",
-    imagem: brownie,
-    avaliacao: 4.9,
-    avaliacoes: 611,
-    estoque: 35,
     destaque: true,
   },
 ];
