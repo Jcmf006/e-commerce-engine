@@ -32,7 +32,7 @@ function Home() {
       <section className="relative isolate overflow-hidden">
         <img
           src={heroImg}
-          alt="Bife grelhado na brasa servido em frigideira de ferro sob luz de velas"
+          alt="Caneca de cerveja gelada com espuma dourada e espigas de trigo, promocional Alho Bistrô"
           width={1600}
           height={1000}
           className="absolute inset-0 h-full w-full object-cover"
