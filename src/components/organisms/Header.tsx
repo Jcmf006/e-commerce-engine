@@ -22,11 +22,11 @@ export function Header() {
             <img
               src={logo.url}
               alt="Alho Bistrô"
-              width={56}
-              height={56}
-              className="h-14 w-14 shrink-0 rounded-full object-cover"
+              width={80}
+              height={80}
+              className="h-20 w-20 shrink-0 rounded-full object-cover"
             />
-            <span className="truncate font-display text-lg font-semibold tracking-tight">
+            <span className="truncate font-display text-xl font-semibold tracking-tight">
               Alho Bistrô
             </span>
           </Link>
