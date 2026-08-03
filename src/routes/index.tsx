@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Clock, MapPin, Sparkles } from "lucide-react";
-import heroImg from "@/assets/hero-bistro.jpg";
+import heroImg from "@/assets/banner_2.jpeg.asset.json";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { Button } from "@/components/ui/button";
 import { PRATOS } from "@/data/menu";
@@ -32,7 +32,7 @@ function Home() {
       <section className="relative isolate overflow-hidden bg-background">
         <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6">
           <img
-            src={heroImg}
+            src={heroImg.url}
             alt="Caneca de cerveja gelada com espuma dourada e espigas de trigo, promocional Alho Bistrô"
             width={1600}
             height={1000}
