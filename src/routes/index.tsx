@@ -32,7 +32,7 @@ function Home() {
       <section className="relative isolate overflow-hidden bg-background">
         <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6">
           <img
-            src={heroImg}
+            src={heroImg.url}
             alt="Caneca de cerveja gelada com espuma dourada e espigas de trigo, promocional Alho Bistrô"
             width={1600}
             height={1000}
