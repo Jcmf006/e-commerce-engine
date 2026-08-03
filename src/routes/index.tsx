@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Clock, MapPin, Sparkles } from "lucide-react";
-import heroImg from "@/assets/hero-bistro.jpg";
+import heroImg from "@/assets/banner_2.jpeg.asset.json";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { Button } from "@/components/ui/button";
 import { PRATOS } from "@/data/menu";
