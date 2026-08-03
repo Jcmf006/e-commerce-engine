@@ -30,13 +30,13 @@ function Home() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-background">
-        <div className="mx-auto max-w-5xl px-4 pt-6 sm:px-6">
+        <div className="w-full">
           <img
             src={heroImg.url}
             alt="Caneca de cerveja gelada com espuma dourada e espigas de trigo, promocional Alho Bistrô"
             width={1600}
             height={1000}
-            className="mx-auto block max-h-[52vh] w-full rounded-2xl object-contain"
+            className="block h-auto w-full max-h-[60vh] object-cover"
           />
         </div>
         <div className="relative mx-auto flex max-w-7xl flex-col items-start px-4 py-8 sm:px-6 sm:py-10">
